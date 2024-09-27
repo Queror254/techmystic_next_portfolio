@@ -1,4 +1,5 @@
-'use client'
+// @ts-ignore
+'use client';
 import React from 'react'
 import Image from 'next/image'
 import heroImg from '@/public/heroimg.png'
