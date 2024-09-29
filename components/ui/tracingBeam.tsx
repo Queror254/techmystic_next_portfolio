@@ -1,4 +1,3 @@
-// @ts-ignore
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import {
@@ -52,7 +51,7 @@ export const TracingBeam = ({
       ref={ref}
       className={cn("relative w-full max-w-4xl mx-auto h-full", className)}
     >
-      <div className="fixed md:absolute -left-4 md:-left-20 top-3">
+      <div className="fixed md:fixed lg:fixed -left-7 md:-left-7 lg:-left-6 top-3">
         <motion.div
           transition={{
             duration: 0.2,

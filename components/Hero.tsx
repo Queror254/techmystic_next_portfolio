@@ -1,4 +1,3 @@
-// @ts-ignore
 'use client';
 import React from 'react'
 import Image from 'next/image'
@@ -53,36 +52,48 @@ const Icons = {
 };
 
 const Hero = () => {
-  
+  const aka:string ='<techmystic />'
   return (
-    <div className='mt-10 md:mt-16 lg:mt-16 py-10'>
-      <div className='flex flex-col justify-center items-center h-full w-full'>
+    <div className='mt-2 py-2'>
+      <div className='relative flex flex-col justify-center items-center h-full w-full'>
           {/*-- Cover Image -- */}
-              <Image
-    src={coverImg}
-    alt="Cover Image"
-    className="w-full h-32 md:h-48 lg:56 object-cover"
-  />
+         <Image
+           src={coverImg}
+           alt="Cover Image"
+           className="w-full h-32 md:h-48 lg:56 object-cover"
+           />
   <div className='flex flex-col justify-center items-center gap-3 w-full -mt-20 lg:-mt-24'>
     {/** Profile picture */}
         <Image alt='victor' className='bg-inherit object-cover rounded-full size-[150px] md:sixe-[200px] lg:size-[220px]' src={heroImg} />
-        <div className='p-10 flex flex-col gap-3 justify-center items-center w-full text-slate-900 dark:text-white'>
-          <h1 className=' text-4xl text-center md:text-5xl lg:text-6xl font-semibold font-mono'>Hi, I'm Victor</h1>
-          <h3 className='text-1xl md:text-4xl lg:text-4xl dark:font-thin'>Fullstack Developer</h3>
+        <div className='px-4 md:px-10 flex flex-col gap-3 justify-center items-center w-full text-slate-900 dark:text-white'>
+          <h1 className='text-4xl text-center md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono'>Hi, I'm Victor</h1>
+          <h4 className='text-xl font-mono text-emerald-600'>{aka}</h4>
+          <h3 className='text-2xl md:text-4xl lg:text-4xl dark:font-thin'>Fullstack Developer</h3>
           <div className='flex flex-row gap-5'>
-            {/** social icons */}
-            <Icons.github className='size-7 hover:animate-ping hover:cursor-pointer'><a href="https://github.com/Queror254" className=''></a></Icons.github>
-             <a href=""><Icons.linkedin className='hero_icon' /></a>
-              <a href=""><Icons.x className='hero_icon' /></a>
-               <a href=""><Icons.email className='hero_icon' /></a>
-                <a href=""><Icons.linkedin className='hero_icon' /></a>
-          </div>
-          <p className="text-sm md:text-xl font-mono items-center text-white mt-4">
-  Building robust, scalable web applications with expertise in <span className="text-emerald-500">Node.js, React, MongoDB</span>, and more. <br />
-  Dropped out of college to chase my coding dreams, now delivering projects with impact and efficiency.
-</p>
-       </div>   
-       </div>   
+  {/** Social icons wrapped with clickable links */}
+  <a href="https://github.com/Queror254" target="_blank" rel="noopener noreferrer">
+    <Icons.github className='hero_icon' />
+  </a>
+  <a href="/home">
+    <Icons.linkedin className='hero_icon' />
+  </a>
+  <a href="#">
+    <Icons.x className='hero_icon' />
+  </a>
+  <a href="mailto:mwendavictorm@gmail.com">
+    <Icons.email className='hero_icon' />
+  </a>
+  <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
+    <Icons.linkedin className='hero_icon' />
+  </a>
+</div>
+
+          <p className="text-sm md:text-xl font-mono  text-white mt-4">
+              Building robust, scalable web applications with expertise in <span className="text-emerald-500">Node.js, React, MongoDB</span>, and more. <br />
+              Dropped out of college to chase my coding dreams, now delivering projects with impact and efficiency.
+          </p>
+        </div>   
+      </div>   
       </div>
     </div>
   )

@@ -1,4 +1,3 @@
-// @ts-ignore
 "use client";
 
 import React, { PropsWithChildren, useRef } from "react";
@@ -19,7 +18,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "mx-auto w-max md:w-[500px] mt-4  h-[58px] p-2 flex gap-2 md:gap-5 rounded-2xl border supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md",
+  "mx-auto w-full md:w-[500px] mt-4 h-[58px] p-2 flex flex-row justify-center items-center gap-3 md:gap-5 rounded-2xl border supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md",
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(

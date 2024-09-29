@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "./mode-toggle";
+import Home from '../app/page';
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
@@ -93,63 +94,116 @@ const DATA = {
 
 export function NavBar() {
   return (
-    <div className="fixed top z-10 inset-0 h-full w-full bg-transparent">
-      <TooltipProvider>
+    <div className="fixed inset-x-0 bottom-0 z-30 mx-auto mb-10 flex origin-bottom h-full max-h-14">
+      <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>      <TooltipProvider>
         <Dock direction="middle">
-          {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={item.href}
-                    aria-label={item.label}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full",
-                    )}
-                  >
-                    <item.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-full" />
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
-            <DockIcon key={name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={social.url}
-                    aria-label={social.name}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full",
-                    )}
-                  >
-                    <social.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-full py-2" />
           <DockIcon>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <ModeToggle />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Theme</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/"
+                    aria-label="Home"
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-md  hover:bg-inherit",
+                    )}
+                  >
+                    {/*<span><HomeIcon className="size-4" /></span>*/}
+                    <span>Home</span>
+                    
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Top</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+
+          <Separator orientation="vertical" className="h-full" />
+
+          <DockIcon>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/"
+                    aria-label="Home"
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-md  hover:bg-inherit",
+                    )}
+                  >
+                    Skills
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>checkout my skills</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+
+          <DockIcon>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/"
+                    aria-label="Home"
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-md  hover:bg-inherit",
+                    )}
+                  >
+                    Projects
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Take a look at my projects</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+
+          <Separator orientation="vertical" className="h-full" />
+
+            <DockIcon>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/"
+                    aria-label="Home"
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-md  hover:bg-inherit",
+                    )}
+                  >
+                    Blog
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>techmystic</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+
+            <DockIcon>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/"
+                    aria-label="Home"
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-md  hover:bg-inherit",
+                    )}
+                  >
+                    Contact
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>reach out to me</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          
+
         </Dock>
       </TooltipProvider>
     </div>
