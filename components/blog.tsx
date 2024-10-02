@@ -1,18 +1,16 @@
 'use client'
+import Image from 'next/image'
+import Test from '@/public/test.svg'
 import React from 'react'
-const Blog = () => {
-  return (
-    <div className='py-10 flex justify-center items-center'>
-<section id="blog">
-  <h2>Blog</h2>
-  <ul>
-    <li><a href="https://yourblog.com/post1">How to Build Scalable Node.js Applications</a></li>
-    <li><a href="https://yourblog.com/post2">Understanding MongoDB Schema Design</a></li>
-  </ul>
-</section>
 
+const Skills = () => {
+  return (
+    <div className='mt-2 py-2'>
+      <div className='relative flex flex-col h-full w-full'>
+        <h2 className='text-2xl flex justify-start items-star pl-4 decoration underline'>Blog</h2>
+      </div>
     </div>
   )
 }
 
-export default Blog
+export default Skills

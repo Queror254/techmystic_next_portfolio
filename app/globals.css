@@ -69,5 +69,9 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .section_title{
+    @apply text-2xl flex justify-start items-start pl-4 font-mono font-semibold;
+  }
 }
 
