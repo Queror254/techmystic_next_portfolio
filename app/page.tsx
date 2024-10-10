@@ -3,7 +3,7 @@ import { NavBar } from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
-import Blog from "@/components/blog";
+import PopupForm from "@/components/test";
 import Contact from "@/components/contact";
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
           <Hero />
           <Skills />
           <Projects />
-          <Blog />
+          <PopupForm />
           <Contact />
           <NavBar />
           </TracingBeam>
