@@ -183,7 +183,11 @@ export default function Projects() {
             <div className="flex flex-col gap-3">
               <img src={activeProject.popupImg} alt={activeProject.title} className="rounded-md" />
               <h2 className="text-4xl font-bold font-mono border-b-2 w-max border-spacing-2 border-dashed border-emerald-500">{activeProject.title}</h2>
-              <p>{activeProject.popupDescription}</p> {/* Use popupDescription */}
+              <p>
+                {activeProject.popupDescription.map((desc, index) => (
+                   <span key={index}>{desc}</span>
+                ))}
+              </p> {/* Use popupDescription */}
               <a href={activeProject.sourceLink} target="blank" className="p-2 my-4 rounded-full bg-black border border-emerald-500 text-white text-sm w-max flex justify-center items-center">
                 Github code
               </a>
