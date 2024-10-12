@@ -39,9 +39,10 @@ const projectsData = [
     sourceLink: "https://github.com/Queror254/JobHive",
     popupImg: "/images/portfolio/job.png",
     popupDescription: [
-      <p key="jobhive-1"><b className="text-xl">Discover Your Dream Career with JobHive</b></p>,
+      <p key="jobhive-1" className="mt-8 mb-2"><b className="text-xl">Discover Your Dream Career with JobHive</b></p>,
       <p key="jobhive-2">JobHive simplifies your job search by compiling various job platforms into one seamless app. No more switching between multiple job boards—everything you need is in one place.</p>,
-      <p key="jobhive-3"><b className="text-xl">Effortless Job Searching</b></p>,
+      <br key="jobhive-br-2" />,
+      <p key="jobhive-3" className="mb-2"><b className="text-xl">Effortless Job Searching</b></p>,
       <p key="jobhive-4">This app provides easy access to a vast range of job opportunities. With JobHive, you can streamline your search process, apply quickly, and increase your chances of finding the ideal job.</p>,
       <p key="jobhive-5">Whether you're looking for remote work or on-site positions, JobHive offers filters and smart recommendations tailored to your preferences. Your dream job is just a few clicks away!</p>
     ],
@@ -58,9 +59,10 @@ const projectsData = [
     sourceLink: "https://github.com/Queror254/",
     popupImg: "/images/portfolio/flipliquidity/flipliquidity.png",
     popupDescription: [
-      <p key="flip-1"><b className="text-xl">Flipliquidity: Simplifying Cryptocurrency Trading</b></p>,
+      <p key="flip-1" className="mt-8 mb-2"><b className="text-xl">Flipliquidity: Simplifying Cryptocurrency Trading</b></p>,
       <p key="flip-2">Flipliquidity is designed for both beginner and seasoned crypto traders, offering an intuitive platform to buy and sell digital currencies. With real-time market analysis, this app ensures that users make informed decisions when trading.</p>,
-      <p key="flip-3"><b className="text-xl">Cutting-Edge Technology for Real-Time Trades</b></p>,
+      <br key="flip-br-2" />,
+      <p key="flip-3" className="mb-2"><b className="text-xl">Cutting-Edge Technology for Real-Time Trades</b></p>,
       <p key="flip-4">Leveraging TensorFlow for data-driven insights, Flipliquidity helps users analyze trends and optimize trading strategies. The app guarantees a secure and transparent trading environment, ensuring user trust and satisfaction.</p>
     ]
   },
@@ -72,13 +74,14 @@ const projectsData = [
     description: "A restaurant website designed to offer a sleek and modern interface for customers.",
     imageUrl: "/images/portfolio/kremeland.png",
     technologies: ["React", "Next.js", "Stripe API", "Tailwind CSS"],
-    liveLink: "https://example.com/e-commerce",
+    liveLink: "https://kremeland.vercel.app/",
     sourceLink: "https://github.com/Queror254/",
     popupImg: "/images/portfolio/kremeland.png",
     popupDescription: [
-      <p key="kremeland-1"><b className="text-xl">Kremeland: Where Taste Meets Technology</b></p>,
+      <p key="kremeland-1" className="mt-8 mb-2"><b className="text-xl">Kremeland: Where Taste Meets Technology</b></p>,
       <p key="kremeland-2">Kremeland is a vibrant website for a restaurant, providing a seamless user experience for customers. The design emphasizes simplicity and functionality, allowing users to easily browse menus, make reservations, and place orders online.</p>,
-      <p key="kremeland-3"><b className="text-xl">Seamless Payment Integration</b></p>,
+      <br key="kremeland-br-2" />,
+      <p key="kremeland-3" className="mb-2"><b className="text-xl">Seamless Payment Integration</b></p>,
       <p key="kremeland-4">The integration with Stripe ensures a secure and easy payment process. Whether customers are dining in or ordering takeout, Kremeland offers a complete solution for managing online orders and payments efficiently.</p>
     ]
   },
@@ -94,13 +97,15 @@ const projectsData = [
     sourceLink: "https://github.com/Queror254/",
     popupImg: "/images/portfolio/hotspotmenu.png",
     popupDescription: [
-      <p key="hotspot-1"><b className="text-xl">Hot Spot Eatery: A Quick Service Restaurant Site</b></p>,
+      <p key="hotspot-1" className="mt-8 mb-2"><b className="text-xl">Hot Spot Eatery: A Quick Service Restaurant Site</b></p>,
       <p key="hotspot-2">This fast-food restaurant website was created to provide a modern and fast-loading interface, allowing users to easily navigate the menu, check the location, and place orders.</p>,
-      <p key="hotspot-3"><b className="text-xl">Fast, Reliable & Responsive</b></p>,
+      <br key="hotspot-br-2" />,
+      <p key="hotspot-3" className="mb-2"><b className="text-xl">Fast, Reliable & Responsive</b></p>,
       <p key="hotspot-4">Built with simple HTML, CSS, and JavaScript, the website prioritizes user experience, ensuring quick load times and a responsive design across devices.</p>
     ]
   }
 ];
+
 
 
 export default function Projects() {
@@ -181,9 +186,15 @@ export default function Projects() {
                    <span key={index}>{desc}</span>
                 ))}
               </p> {/* Use popupDescription */}
-              <a href={activeProject.sourceLink} target="blank" className="p-2 my-4 rounded-full bg-black border border-emerald-500 text-white text-sm w-max flex justify-center items-center">
-                Github code
-              </a>
+              <div className="flex flex-row gap-4 ">
+                <a href={activeProject.liveLink} target="blank" className="p-2 my-4 rounded-full bg-black border border-emerald-500 text-white text-sm w-max flex justify-center items-center">
+                 Live Preiview
+                </a>
+                <a href={activeProject.sourceLink} target="blank" className="p-2 my-4 rounded-full bg-black border border-emerald-500 text-white text-sm w-max flex justify-center items-center">
+                 Github code
+                </a>
+              </div>
+              
             </div>
           </div>
         </div>
