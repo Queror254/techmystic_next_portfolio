@@ -154,10 +154,11 @@ export default function Projects() {
                 {project.description}
               </CardItem>
               <CardItem translateZ="50" className="flex flex-wrap gap-4 w-72">
-                {project.technologies.map((tech, index) => (
-                  <div key={index} className="tech_stack">{tech}</div>
-                ))}
-              </CardItem>
+  {project.technologies.map((tech, index) => (
+    <div key={index} className="tech_stack">{tech}</div> // Add `key` here
+  ))}
+</CardItem>
+
               <div className="flex justify-between items-center mt-14">
                 <CardItem translateZ={20} as={Link} href={project.liveLink} target="__blank" className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white">
                   Live Preview →
