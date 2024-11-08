@@ -1,6 +1,8 @@
+//@ts-ignore
 'use client'
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -15,6 +17,7 @@ import {
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "./mode-toggle";
 import Home from '../app/page';
+import { div } from 'framer-motion/client';
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
@@ -105,9 +108,10 @@ export function NavBar() {
                     aria-label="Home"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit",
+                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
                     )}
                   >
+                    <Image src="/nav-icons/home.png" alt="icon" width={20} height={20} />
                     {/*<span><HomeIcon className="size-4" /></span>*/}
                     <span>Home</span>
                     
@@ -125,13 +129,14 @@ export function NavBar() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href="/"
+                    href="#skills"
                     aria-label="Home"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit",
+                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
                     )}
                   >
+                    <Image src="/nav-icons/skills.png" alt="icon" width={20} height={20} />
                     Skills
                   </Link>
                 </TooltipTrigger>
@@ -145,13 +150,14 @@ export function NavBar() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href="/"
+                    href="/project"
                     aria-label="Home"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit",
+                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
                     )}
                   >
+                    <Image src="/nav-icons/project1.png" alt="icon" width={20} height={20} />
                     Projects
                   </Link>
                 </TooltipTrigger>
@@ -171,9 +177,10 @@ export function NavBar() {
                     aria-label="Home"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit",
+                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
                     )}
                   >
+                    <Image src="/nav-icons/blog.png" alt="icon" width={20} height={20} />
                     Blog
                   </Link>
                 </TooltipTrigger>
@@ -191,9 +198,10 @@ export function NavBar() {
                     aria-label="Home"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit",
+                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
                     )}
                   >
+                    <Image src="/nav-icons/contact.png" alt="icon" width={20} height={20} />
                     Contact
                   </Link>
                 </TooltipTrigger>

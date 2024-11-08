@@ -1,3 +1,4 @@
+//@ts-ignore
 import { useState, useEffect } from 'react';
 
 export const ModeToggle = () => {

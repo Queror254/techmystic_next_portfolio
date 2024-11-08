@@ -1,6 +1,5 @@
+//@ts-ignore
 'use client'
-import Image from 'next/image'
-import Test from '@/public/test.svg'
 import React from 'react'
 
 const Skills = () => {

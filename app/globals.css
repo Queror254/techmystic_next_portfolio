@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("boxicons/css/boxicons.min.css");
 
 
 .scrollbar-none::-webkit-scrollbar {
@@ -83,12 +84,20 @@
   }
 
   .section_title{
-    @apply text-2xl flex justify-start items-start pl-4 font-mono font-semibold;
+    @apply text-[1.75rem] flex flex-row justify-center items-center pl-4 font-semibold gap-1;
+  }
+
+  .title{
+    @apply text-[2rem]
   }
 
   .tech_stack{
     @apply p-1 rounded-md bg-gray-700 text-white text-sm;
   }
+}
+
+@layer base {
+  
 }
 
 

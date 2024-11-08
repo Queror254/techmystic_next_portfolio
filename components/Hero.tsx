@@ -1,3 +1,4 @@
+//@ts-ignore
 'use client';
 import React from 'react'
 import Image from 'next/image'
@@ -60,11 +61,11 @@ const Hero = () => {
          <Image
            src={coverImg}
            alt="Cover Image"
-           className="w-full h-32 md:h-48 lg:56 object-cover"
+           className="w-full h-32 md:h-48 lg:20 object-cover"
            />
   <div className='flex flex-col justify-center items-center gap-3 w-full -mt-20 lg:-mt-24'>
     {/** Profile picture */}
-        <Image alt='victor' className='bg-inherit object-cover rounded-full size-[150px] md:sixe-[200px] lg:size-[220px]' src={heroImg} />
+        <Image alt='victor' className='bg-inherit rounded-full size-[150px] md:sixe-[200px] lg:size-[220px] object-contain' src={heroImg} />
         <div className='px-4 md:px-10 flex flex-col gap-3 justify-center items-center w-full text-slate-900 dark:text-white'>
           <h1 className='text-4xl text-center md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono'>Hi, I'm Victor</h1>
           <h4 className='text-xl font-mono text-emerald-600'>{aka}</h4>
@@ -87,10 +88,15 @@ const Hero = () => {
     <Icons.linkedin className='hero_icon' />
   </a>
 </div>
-
-          <p className="text-sm md:text-xl font-mono  text-white mt-4">
-              Building robust, scalable web applications with expertise in <span className="text-emerald-500">Node.js, React, MongoDB</span>, and more. <br />
-              Dropped out of college to chase my coding dreams, now delivering projects with impact and efficiency.
+   <div className='flex flex-col gap-3'>
+    
+   </div>
+          <p className="text-[1.1rem] text-slate-400 mt-4">
+              Hi! I’m a Fullstack developer with more than 4 years experience.
+               I specialize in building robust, scalable web & mobile applications, 
+               with a passion for delivering innovative solutions and continually pushing the 
+               boundaries of what technology can achieve. 
+               Check out my <a className='text-emerald-500 hover:underline' href="#projects">latest projects</a> and case studies.
           </p>
         </div>   
       </div>   

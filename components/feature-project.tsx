@@ -1,32 +1,17 @@
 //@ts-ignore
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
 
-//project data template : 
-/**
- * 
- const projectsData = [
-  {
-    id: 1,
-    category: 'web/app/Api/etc',
-    title: "Title",
-    duration: "dateTime",
-    description: "Peek________desc_________",
-    imageUrl: "url",
-    technologies: ["Next.js", "CSS", "JavaScript", "React"],
-    liveLink: "webisite_live_link",
-    sourceLink: "github_link",
-    popupImg: "Image_url",
-    popupDescription:
-      "Full__________desc____________",
-  },
-]
- * 
- */
-const projectsData = [
+// Carousel Component
+export default function Projects() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const projectsData = [
   {
     id: 1,
     category: 'web',
@@ -106,57 +91,94 @@ const projectsData = [
   }
 ];
 
-
-export default function Projects() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState(null);
-
   const openPopup = (project) => {
-    setActiveProject(project); // Set the clicked project data
+    setActiveProject(project);
     setIsOpen(true);
   };
 
   const closePopup = () => {
     setIsOpen(false);
-    setActiveProject(null); // Reset active project
+    setActiveProject(null);
   };
+
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % projectsData.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + projectsData.length) % projectsData.length
+    );
+  };
+
+    // Automatically switch to the next slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 4000);
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, []);
 
   return (
     <main className="py-10" id="projects">
-    <h2 className='section_title'>
-          <span className='underline decoration-emerald-600 text-transparent'>---</span>
-           <span className="title">Featured Projects </span>
-          <span className='underline decoration-emerald-600 text-transparent'>---</span> 
-        </h2>
-    <div className="flex flex-wrap justify-center items-center mx-auto px-2 md:px-2 py-10 w-full gap-4">
-      {projectsData.map((project) => (
-        <CardContainer key={project.id} className="w-full inter-var">
+      <h2 className="section_title">
+        <span className="underline decoration-emerald-600 text-transparent">---</span>
+        <span className="title">Featured Projects </span>
+        <span className="underline decoration-emerald-600 text-transparent">---</span>
+      </h2>
+
+      <div className="relative w-full flex justify-center items-center px-2 py-10">
+        {/* Carousel Container */}
+        <div className="flex justify-center items-center w-full">
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 p-2 m-auto bg-black text-white rounded-full hover:bg-emerald-500"
+          >
+            {"<"}
+          </button>
+
+          {projectsData.map((project, index) => (
+            <div
+              key={project.id}
+              className={`slide transition-transform duration-700 ease-in-out ${
+                index === currentSlide ? "slide-active" : "slide-inactive"
+              }`}
+              style={{ display: index === currentSlide ? "block" : "none" }}
+            >
+              <CardContainer className="w-full inter-var">
           <CardBody className="flex flex-col justify-center items-center bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black border-black/[0.1] xs:w-[370px] sm:w-[400px] md:w-[700px] w-max h-max rounded-xl xs:p-4 sm:p-2 md:p-6 border border-emerald-900 hover:border-emerald-500">
-            {/* Pass project data here */}
-              <CardItem translateZ="70" className="w-full mt-4 mb-4">
-                <Image
-                  src={project.imageUrl}
-                  height="700"
-                  width="700"
-                  className="h-60 w-[400px] md:h-auto md:w-auto mx-auto object-cover rounded-xl group-hover/card:shadow-xl"
-                  alt={project.title}
-                />
-              </CardItem>
-              <div className="flex justify-between xs:gap-60 sm:gap-64 md:gap-96 items-center mt-5">
-                <CardItem translateZ={20} onClick={() => openPopup(project)}  className="flex justify-center items-center gap-2 xs:px-0 px-4 py-1 hover:shadow-lg hover:shadow-emerald-500 rounded-md font-bold text-white hover:cursor-pointer">
+                  <CardItem translateZ="70" className="w-full mt-4 mb-4">
+                    <Image
+                      src={project.imageUrl}
+                      height="700"
+                      width="700"
+                      className="h-60 w-[400px] md:h-auto md:w-auto mx-auto object-cover rounded-xl"
+                      alt={project.title}
+                    />
+                  </CardItem>
+                  <div className="flex justify-between xs:gap-52 sm:gap-56 md:gap-96 items-center mt-5">
+                <CardItem translateZ={20} onClick={() => openPopup(project)}  className="flex justify-center items-center gap-2 xs:px-1 xs:ml-2 px-4 py-1 hover:shadow-lg hover:shadow-emerald-500 rounded-md font-bold text-white hover:cursor-pointer">
                   <Image src="/details_link.png" alt="github logo" width={20} height={20} />
+                  More
                 </CardItem>
-                <CardItem translateZ={20} as={Link} href={project.sourceLink} target="__blank" className="flex flex-row justify-center items-center gap-2 hover:shadow-lg hover:shadow-emerald-500 px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold">
+                <CardItem translateZ={20} as={Link} href={project.sourceLink} target="__blank" className="flex flex-row justify-center items-center gap-2 hover:shadow-lg hover:shadow-emerald-500 xs:px-2 px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold">
                   <Image src="/github.png" alt="github logo" width={15} height={15} />
                   Source
                 </CardItem>
               </div>
+                </CardBody>
+              </CardContainer>
+            </div>
+          ))}
 
-          </CardBody>
-        </CardContainer>
-      ))}
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 p-2 m-auto bg-black text-white rounded-full hover:bg-emerald-500"
+          >
+            {">"}
+          </button>
+        </div>
 
-      {isOpen && activeProject && (
+        {/* Popup Modal */}
+        {isOpen && activeProject && (
         <div id="small-dialog" className="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-gray-900 bg-opacity-50 overflow-hidden px-1 md:px-10">
           <div className="relative bg-gray-900 text-slate-200 p-4 md:p-10 rounded-lg w-[100%] md:w-[70%] max-h-[100%] md:max-h-[90%] overflow-y-scroll scrollbar-none">
             <div className="flex justify-end items-end top-4 pt-16 md:pt-8">
@@ -185,7 +207,7 @@ export default function Projects() {
           </div>
         </div>
       )}
-    </div>
+      </div>
     </main>
   );
 }
