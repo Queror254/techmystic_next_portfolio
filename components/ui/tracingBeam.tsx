@@ -49,7 +49,7 @@ export const TracingBeam = ({
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full max-w-4xl mx-auto h-full", className)}
+      className={cn("relative w-full mx-auto h-full", className)}
     >
       <div className="fixed md:fixed lg:fixed -left-7 md:-left-7 lg:-left-6 top-3">
         <motion.div
@@ -122,6 +122,7 @@ export const TracingBeam = ({
           </defs>
         </svg>
       </div>
+
       <div ref={contentRef}>{children}</div>
     </motion.div>
   );

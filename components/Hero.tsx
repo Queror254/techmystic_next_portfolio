@@ -1,9 +1,9 @@
 //@ts-ignore
-'use client';
-import React from 'react'
-import Image from 'next/image'
-import heroImg from '@/public/heroimg.png'
-import coverImg from '@/public/cy.webp'
+"use client";
+import React from "react";
+import Image from "next/image";
+import heroImg from "@/public/heroimg.png";
+import coverImg from "@/public/cy.webp";
 import { CalendarIcon, MailIcon } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -53,56 +53,123 @@ const Icons = {
 };
 
 const Hero = () => {
-  const aka:string ='<techmystic />'
+  const aka: string = "<techmystic />";
   return (
-    <div className='mt-2 py-2'>
-      <div className='relative flex flex-col justify-center items-center h-full w-full'>
-          {/*-- Cover Image -- */}
-         <Image
-           src={coverImg}
-           alt="Cover Image"
-           className="w-full h-32 md:h-48 lg:20 object-cover"
-           />
-  <div className='flex flex-col justify-center items-center gap-3 w-full -mt-20 lg:-mt-24'>
-    {/** Profile picture */}
-        <Image alt='victor' className='bg-inherit rounded-full size-[150px] md:sixe-[200px] lg:size-[220px] object-contain' src={heroImg} />
-        <div className='px-4 md:px-10 flex flex-col gap-3 justify-center items-center w-full text-slate-900 dark:text-white'>
-          <h1 className='text-4xl text-center md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono'>Hi, I'm Victor</h1>
-          <h4 className='text-xl font-mono text-emerald-600'>{aka}</h4>
-          <h3 className='text-2xl md:text-4xl lg:text-4xl dark:font-thin'>Fullstack Developer</h3>
-          <div className='flex flex-row gap-5'>
-  {/** Social icons wrapped with clickable links */}
-  <a href="https://github.com/Queror254" target="_blank" rel="noopener noreferrer">
-    <Icons.github className='hero_icon' />
-  </a>
-  <a href="/home">
-    <Icons.linkedin className='hero_icon' />
-  </a>
-  <a href="#">
-    <Icons.x className='hero_icon' />
-  </a>
-  <a href="mailto:mwendavictorm@gmail.com">
-    <Icons.email className='hero_icon' />
-  </a>
-  <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
-    <Icons.linkedin className='hero_icon' />
-  </a>
-</div>
-   <div className='flex flex-col gap-3'>
-    
-   </div>
-          <p className="text-[1.1rem] text-slate-400 mt-4">
-              Hi! I’m a Fullstack developer with more than 4 years experience.
-               I specialize in building robust, scalable web & mobile applications, 
-               with a passion for delivering innovative solutions and continually pushing the 
-               boundaries of what technology can achieve. 
-               Check out my <a className='text-emerald-500 hover:underline' href="#projects">latest projects</a> and case studies.
-          </p>
-        </div>   
-      </div>   
+    <div className="mt-2 py-2">
+      <div className="relative flex flex-col justify-center items-center h-full w-full">
+        {/*-- Cover Image -- */}
+        <Image
+          src={coverImg}
+          alt="Cover Image"
+          className="w-full h-32 md:h-48 lg:20 object-cover"
+        />
+        <div className="flex flex-col justify-center items-center gap-3 w-full -mt-20 lg:-mt-24 text-white">
+          {/** Profile picture */}
+          <Image
+            alt="victor"
+            className="bg-inherit rounded-full size-[150px] md:sixe-[200px] lg:size-[220px] object-contain"
+            src={heroImg}
+          />
+          <h1 className="text-4xl text-center md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono">
+            Hi, I'm Victor
+          </h1>
+          <h4 className="text-xl font-mono text-emerald-600">{aka}</h4>
+          <div className="mb-4">
+            <h3 className="text-2xl md:text-4xl lg:text-4xl dark:font-thin">
+              Fullstack Developer
+            </h3>
+          </div>
+          <div className="px-4 flex flex-col md:flex-row gap-6 w-fit md:px-20 justify-center items-center text-white">
+            <div className="flex flex-col gap-3 w-full justify-center items-center">
+              <div className="flex items-center justify-center relative h-[200px] w-[200px]">
+                {/** Title at the center */}
+                <div className="absolute bg-transparent rounded-full w-[100px] h-[100px] flex items-center justify-center">
+                  <h3 className="text-3xl font-mono font-semibold text-center text-white">
+                    Get in touch
+                  </h3>
+                </div>
+
+                {/** Social icons arranged circularly */}
+                <a
+                  href="https://github.com/Queror254"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute"
+                >
+                  <Icons.github
+                    className="hero_icon transform transition duration-500 hover:scale-125"
+                    style={{
+                      transform: "rotate(0deg) translate(100px) rotate(0deg)",
+                    }}
+                  />
+                </a>
+
+                <a
+                  href="/home"
+                  target="_blank"
+                  className="absolute"
+                  style={{
+                    transform: "rotate(72deg) translate(100px) rotate(-72deg)",
+                  }}
+                >
+                  <Icons.linkedin className="hero_icon" />
+                </a>
+                <a
+                  href="https://www.x.com"
+                  target="_blank"
+                  className="absolute"
+                  style={{
+                    transform:
+                      "rotate(144deg) translate(100px) rotate(-144deg)",
+                  }}
+                >
+                  <Icons.x className="hero_icon" />
+                </a>
+                <a
+                  href="mailto:mwendavictorm@gmail.com"
+                  className="absolute"
+                  style={{
+                    transform:
+                      "rotate(216deg) translate(100px) rotate(-216deg)",
+                  }}
+                >
+                  <Icons.email className="hero_icon" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/your-linkedin-profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute"
+                  style={{
+                    transform:
+                      "rotate(288deg) translate(100px) rotate(-288deg)",
+                  }}
+                >
+                  <Icons.linkedin className="hero_icon" />
+                </a>
+              </div>
+            </div>
+            <div className="about_desc w-fit">
+              <p className="text-[1.1rem] text-slate-400 mt-4">
+                Hi! I’m a Fullstack developer with more than 4 years experience.
+                I specialize in building robust, scalable web & mobile
+                applications, with a passion for delivering innovative solutions
+                and continually pushing the boundaries of what technology can
+                achieve. Check out my{" "}
+                <a
+                  className="text-emerald-500 hover:underline"
+                  href="#projects"
+                >
+                  latest projects
+                </a>{" "}
+                and case studies.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

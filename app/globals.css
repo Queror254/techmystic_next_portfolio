@@ -3,7 +3,6 @@
 @tailwind utilities;
 @import url("boxicons/css/boxicons.min.css");
 
-
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
@@ -76,28 +75,31 @@
   * {
     @apply border-border;
   }
-  .hero_icon{
-    @apply size-7 hover:animate-accordion-up hover:cursor-pointer;
+  .hero_icon {
+    @apply size-7 hover:animate-accordion-up hover:cursor-pointer shadow-xl shadow-gray-500;
   }
   body {
     @apply bg-background text-foreground;
   }
 
-  .section_title{
-    @apply text-[1.75rem] flex flex-row justify-center items-center pl-4 font-semibold gap-1;
+  .section_title {
+    @apply text-[1.75rem] flex flex-row justify-center items-center pl-4 font-semibold gap-1 text-white;
   }
 
-  .title{
-    @apply text-[2rem]
+  .title {
+    @apply text-[2rem];
   }
 
-  .tech_stack{
+  .tech_stack {
     @apply p-1 rounded-md bg-gray-700 text-white text-sm;
   }
 }
 
 @layer base {
-  
+  .categories_container {
+    @apply flex flex-row flex-wrap justify-center gap-2 md:gap-4 lg:gap-5 bg-transparent shadow-inner shadow-gray-800 hover:shadow-gray-700  border border-gray-600 p-2 rounded-md md:w-[600px] lg:w-[800px] xs:w-full sm:w-full;
+  }
+  .categories_nav {
+    @apply border text-white border-emerald-700 px-2 lg:px-4 rounded-md hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500;
+  }
 }
-
-

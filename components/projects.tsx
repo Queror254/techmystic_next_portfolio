@@ -125,7 +125,7 @@ export default function Projects() {
     <main className="py-10" id="projects">
     <h2 className='section_title'>
           <span className='underline decoration-emerald-600 text-transparent'>---</span>
-           <span className="title">Featured Projects </span>
+           <span className="title">Featured Projects</span>
           <span className='underline decoration-emerald-600 text-transparent'>---</span> 
         </h2>
     <div className="flex flex-wrap justify-center items-center mx-auto px-2 md:px-2 py-10 w-full gap-4">

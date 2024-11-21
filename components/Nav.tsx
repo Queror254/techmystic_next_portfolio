@@ -97,9 +97,9 @@ const DATA = {
 
 export function NavBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-30 mx-auto mb-10 flex origin-bottom h-full max-h-14">
-      <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>      <TooltipProvider>
-        <Dock direction="middle">
+    <div className="fixed inset-x-0 bottom-0 z-30 mx-auto mb-10 flex origin-bottom h-full px-4 max-h-14">
+      <div className="fixed bottom-0 inset-x-0 h-16 w-max"></div>      <TooltipProvider>
+        <Dock direction="middle" className="w-full  bg-gray-800 to-transparent backdrop-blur-lg text-sm text-slate-200">
           <DockIcon>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -108,7 +108,7 @@ export function NavBar() {
                     aria-label="Home"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
+                      "size-10 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
                     )}
                   >
                     <Image src="/nav-icons/home.png" alt="icon" width={20} height={20} />
@@ -129,11 +129,11 @@ export function NavBar() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href="#skills"
-                    aria-label="Home"
+                    href="/#skills"
+                    aria-label="Skills"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
+                      "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
                     )}
                   >
                     <Image src="/nav-icons/skills.png" alt="icon" width={20} height={20} />
@@ -146,15 +146,17 @@ export function NavBar() {
               </Tooltip>
             </DockIcon>
 
+            <Separator orientation="vertical" className="h-full" />
+
           <DockIcon>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
                     href="/project"
-                    aria-label="Home"
+                    aria-label="Projects"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
+                      "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
                     )}
                   >
                     <Image src="/nav-icons/project1.png" alt="icon" width={20} height={20} />
@@ -174,10 +176,10 @@ export function NavBar() {
                 <TooltipTrigger asChild>
                   <Link
                     href="/"
-                    aria-label="Home"
+                    aria-label="Blog"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
+                      "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
                     )}
                   >
                     <Image src="/nav-icons/blog.png" alt="icon" width={20} height={20} />
@@ -195,10 +197,10 @@ export function NavBar() {
                 <TooltipTrigger asChild>
                   <Link
                     href="/"
-                    aria-label="Home"
+                    aria-label="Contact"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:bg-inherit flex flex-col",
+                      "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
                     )}
                   >
                     <Image src="/nav-icons/contact.png" alt="icon" width={20} height={20} />

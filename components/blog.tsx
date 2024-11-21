@@ -1,7 +1,7 @@
 //@ts-ignore
 'use client'
 import React from 'react'
-
+//https://joao-abrantes.com/
 const Skills = () => {
   return (
     <div className='mt-2 py-2'>
