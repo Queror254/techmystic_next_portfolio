@@ -200,7 +200,7 @@ export default function Projects() {
               >
                 {/** style={{ display: index === currentSlide ? "block" : "none" }} **/}
                 <CardContainer className="w-full inter-var">
-                  <CardBody className="flex flex-col justify-center items-center relative group/card dark:hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-black border-black/[0.1] w-[400px] md:w-[500px]  h-[400px] md:h-[500px] md:max-h-[500px] rounded-xl xs:p-4 sm:p-2 md:py-2 md:px-6 border border-emerald-900 hover:border-emerald-500">
+                  <CardBody className="flex flex-col justify-center items-center relative group/card dark:hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-black border-black/[0.1] xs:w-auto sm:w-[400px] md:w-[500px]  h-[400px] md:h-[500px] md:max-h-[500px] rounded-xl xs:p-4 sm:p-2 md:py-2 md:px-6 border border-emerald-900 hover:border-emerald-500">
                     <div className="flex justify-start items-start w-full text-white text-xl font-semibold">
                       <span>{project.title}</span>
                     </div>
@@ -209,7 +209,7 @@ export default function Projects() {
                         src={project.imageUrl}
                         height="700"
                         width="700"
-                        className="h-[12rem] md:h-[15rem] w-[22rem] md:w-[28rem] object-cover rounded-xl mx-auto"
+                        className="h-[12rem] md:h-[15rem] sm:w-[22rem] xs:w-auto md:w-[28rem] object-cover rounded-xl mx-auto"
                         alt={project.title}
                       />
                     </CardItem>
