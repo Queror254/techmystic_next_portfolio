@@ -55,7 +55,7 @@ const Icons = {
 const Hero = () => {
   const aka: string = "<techmystic />";
   return (
-    <div className="mt-2 py-2">
+    <div className="mt-4 py-4 bg-gray-900">
       <div className="relative flex flex-col justify-center items-center h-full w-full">
         {/*-- Cover Image -- */}
         <Image
@@ -64,32 +64,32 @@ const Hero = () => {
           className="w-full h-32 md:h-48 lg:20 object-cover"
         />
         <div className="flex flex-col justify-center items-center gap-3 w-full -mt-20 lg:-mt-24 text-white">
-          {/** Profile picture */}
+          {/** Profile picture
           <Image
             alt="victor"
             className="bg-inherit rounded-full size-[150px] md:sixe-[200px] lg:size-[220px] object-contain"
             src={heroImg}
           />
-          <h1 className="text-4xl text-center md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono">
-            Hi, I'm Victor
+          {/*<h1 className="text-4xl text-center md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono">
+            Hi there, I'm Victor
           </h1>
           <h4 className="text-xl font-mono text-emerald-600">{aka}</h4>
-          <div className="mb-4">
+          <div className="mb-4 flex flex-col gap-4">
             <h3 className="text-2xl md:text-4xl lg:text-4xl dark:font-thin">
               Fullstack Developer
             </h3>
-          </div>
-          <div className="px-4 flex flex-col md:flex-row gap-6 w-fit md:px-20 justify-center items-center text-white">
+          </div>*/}
+          <div className="px-4 flex flex-col lg:flex-row gap-6 w-fit md:px-20 lg:px-32 justify-center items-center text-white">
             <div className="flex flex-col gap-3 w-full justify-center items-center">
-              <div className="flex items-center justify-center relative h-[200px] w-[200px]">
-                {/** Title at the center */}
+              {/* <div className="flex items-center justify-center relative h-[200px] w-[200px]">
+                
                 <div className="absolute bg-transparent rounded-full w-[100px] h-[100px] flex items-center justify-center">
                   <h3 className="text-3xl font-mono font-semibold text-center text-white">
                     Get in touch
                   </h3>
                 </div>
 
-                {/** Social icons arranged circularly */}
+               
                 <a
                   href="https://github.com/Queror254"
                   target="_blank"
@@ -147,21 +147,42 @@ const Hero = () => {
                 >
                   <Icons.linkedin className="hero_icon" />
                 </a>
+              </div>*/}
+              <Image
+                alt="victor"
+                className="bg-inherit rounded-full size-[150px] md:sixe-[200px] lg:size-[220px] object-contain"
+                src={heroImg}
+              />
+              <h1 className="text-5xl text-center md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono">
+                Hi there, I'm Victor
+              </h1>
+              <h4 className="text-xl font-mono text-emerald-600">{aka}</h4>
+              <div className="mb-4 flex flex-col gap-4">
+                <h3 className="text-2xl md:text-4xl lg:text-4xl dark:font-thin">
+                  Fullstack Developer
+                </h3>
               </div>
             </div>
-            <div className="about_desc w-fit">
-              <p className="text-[1.1rem] text-slate-400 mt-4">
+            <div className="about_desc w-fit flex justify-center items-center lg:mt-32">
+              <p className="text-xl font-mono text-slate-400 mt-4">
                 Hi! I’m a Fullstack developer with more than 4 years experience.
                 I specialize in building robust, scalable web & mobile
                 applications, with a passion for delivering innovative solutions
                 and continually pushing the boundaries of what technology can
                 achieve. Check out my{" "}
-                <a
-                  className="text-emerald-500 hover:underline"
-                  href="#projects"
-                >
-                  latest projects
-                </a>{" "}
+                <span className="hover:text-blue-600">
+                  {" "}
+                  {"<a href='/projects'>"}
+                  <a
+                    className="text-emerald-500 hover:underline"
+                    href="#projects"
+                  >
+                    latest projects
+                  </a>{" "}
+                  {""}
+                  {"</a>"}
+                </span>
+                {""}
                 and case studies.
               </p>
             </div>

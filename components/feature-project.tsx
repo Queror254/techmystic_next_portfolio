@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
+import { div } from "framer-motion/client";
+import QuoteFetcher from "./motivate/quote_fetcher";
 
 // Carousel Component
 export default function Projects() {
@@ -168,169 +170,170 @@ export default function Projects() {
   };
 
   return (
-    <main className="py-10" id="projects">
-      <h2 className="section_title">
-        <span className="underline decoration-emerald-600 text-transparent">
-          ---
-        </span>
-        <span className="title">Featured Projects</span>
-        <span className="underline decoration-emerald-600 text-transparent">
-          ---
-        </span>
-      </h2>
+    <>
+      <div className="w-full p-10 bg-gray-950">
+        <QuoteFetcher />
+      </div>
+      <main className="py-10 px-4 sm:px-2 bg-gray-900" id="projects">
+        <h2 className="section_title">
+          <span>{"<"}</span>
+          <span className="title">Featured Projects</span>
+          <span>{"/>"}</span>
+        </h2>
 
-      <div className="relative w-full flex justify-center items-center px-2 py-10">
-        {/* Carousel Container */}
-        <div className="flex flex-wrap flex-row justify-evenly gap-2 items-center w-full">
-          {/* <button
+        <div className="relative w-full flex justify-center items-center px-2 py-10">
+          {/* Carousel Container */}
+          <div className="flex flex-wrap flex-row justify-evenly xs:gap-2 sm:gap-2 gap-3 items-center w-full">
+            {/* <button
             onClick={prevSlide}
             className="absolute left-0 p-2 m-auto bg-black text-white rounded-full hover:bg-emerald-500"
           >
             {"<"}
           </button> */}
 
-          {projectsData.map((project, index) => (
-            <div
-              key={project.id}
-              className={`slide transition-transform duration-700 ease-in-out ${
-                index === currentSlide ? "slide-active" : "slide-inactive"
-              }`}
-            >
-              {/** style={{ display: index === currentSlide ? "block" : "none" }} **/}
-              <CardContainer className="w-full inter-var">
-                <CardBody className="flex flex-col justify-center items-center relative group/card dark:hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-black border-black/[0.1] w-[400px] md:w-[500px]  h-[400px] md:h-[500px] md:max-h-[500px] rounded-xl xs:p-4 sm:p-2 md:py-2 md:px-6 border border-emerald-900 hover:border-emerald-500">
-                  <div className="flex justify-start items-start w-full text-white text-xl font-semibold">
-                    <span>{project.title}</span>
-                  </div>
-                  <CardItem translateZ="70" className="w-full mt-4 mb-4">
-                    <Image
-                      src={project.imageUrl}
-                      height="700"
-                      width="700"
-                      className="h-[12rem] md:h-[15rem] w-[22rem] md:w-[28rem] object-cover rounded-xl mx-auto"
-                      alt={project.title}
-                    />
-                  </CardItem>
-                  <div className="text-white/70">
-                    <span>{project.description}</span>
-                  </div>
-                  <div className="flex justify-between gap-48 items-center mt-5">
-                    <CardItem
-                      translateZ={20}
-                      onClick={() => openPopup(project)}
-                      className="flex justify-center items-center gap-2 xs:px-1 xs:ml-2 px-4 py-1 hover:shadow-lg hover:shadow-emerald-500 rounded-md font-bold text-white hover:cursor-pointer"
-                    >
+            {projectsData.map((project, index) => (
+              <div
+                key={project.id}
+                className={`slide transition-transform duration-700 ease-in-out ${
+                  index === currentSlide ? "slide-active" : "slide-inactive"
+                }`}
+              >
+                {/** style={{ display: index === currentSlide ? "block" : "none" }} **/}
+                <CardContainer className="w-full inter-var">
+                  <CardBody className="flex flex-col justify-center items-center relative group/card dark:hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-black border-black/[0.1] w-[400px] md:w-[500px]  h-[400px] md:h-[500px] md:max-h-[500px] rounded-xl xs:p-4 sm:p-2 md:py-2 md:px-6 border border-emerald-900 hover:border-emerald-500">
+                    <div className="flex justify-start items-start w-full text-white text-xl font-semibold">
+                      <span>{project.title}</span>
+                    </div>
+                    <CardItem translateZ="70" className="w-full mt-4 mb-4">
                       <Image
-                        src="/details_link.png"
-                        alt="github logo"
-                        width={20}
-                        height={20}
+                        src={project.imageUrl}
+                        height="700"
+                        width="700"
+                        className="h-[12rem] md:h-[15rem] w-[22rem] md:w-[28rem] object-cover rounded-xl mx-auto"
+                        alt={project.title}
                       />
-                      More
                     </CardItem>
-                    <CardItem
-                      translateZ={20}
-                      as={Link}
-                      href={project.sourceLink}
-                      target="__blank"
-                      className="flex flex-row justify-center items-center gap-2 hover:shadow-lg hover:shadow-emerald-500 xs:px-2 px-4 py-1 rounded-xl bg-white text-black text-xs font-bold"
-                    >
-                      <Image
-                        src="/github.png"
-                        alt="github logo"
-                        width={20}
-                        height={20}
-                      />
-                      Source
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
-            </div>
-          ))}
-          {/*<button
+                    <div className="text-white/70">
+                      <span>{project.description}</span>
+                    </div>
+                    <div className="flex justify-between gap-48 items-center mt-5">
+                      <CardItem
+                        translateZ={20}
+                        onClick={() => openPopup(project)}
+                        className="flex justify-center items-center gap-2 xs:px-1 xs:ml-2 px-4 py-1 hover:shadow-lg hover:shadow-emerald-500 rounded-md font-bold text-white hover:cursor-pointer"
+                      >
+                        <Image
+                          src="/details_link.png"
+                          alt="github logo"
+                          width={20}
+                          height={20}
+                        />
+                        More
+                      </CardItem>
+                      <CardItem
+                        translateZ={20}
+                        as={Link}
+                        href={project.sourceLink}
+                        target="__blank"
+                        className="flex flex-row justify-center items-center gap-2 hover:shadow-lg hover:shadow-emerald-500 xs:px-2 px-4 py-1 rounded-xl bg-white text-black text-xs font-bold"
+                      >
+                        <Image
+                          src="/github.png"
+                          alt="github logo"
+                          width={20}
+                          height={20}
+                        />
+                        Source
+                      </CardItem>
+                    </div>
+                  </CardBody>
+                </CardContainer>
+              </div>
+            ))}
+            {/*<button
             onClick={nextSlide}
             className="absolute right-0 p-2 m-auto bg-black text-white rounded-full hover:bg-emerald-500"
           >
             {">"}
           </button>*/}
-        </div>
+          </div>
 
-        {/* Popup Modal */}
-        {isOpen && activeProject && (
-          <div
-            id="small-dialog"
-            className="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-gray-900 bg-opacity-50 overflow-hidden px-1 md:px-10"
-          >
-            <div className="relative bg-gray-900 text-slate-200 p-4 md:p-10 rounded-lg w-[100%] md:w-[70%] max-h-[100%] md:max-h-[90%] overflow-y-scroll scrollbar-none">
-              <div className="flex justify-end items-end top-4 pt-16 md:pt-8">
-                <button
-                  onClick={closePopup}
-                  className="fixed z-30 bg-red-600 text-white px-4 py-2 mb-10 rounded-lg"
-                >
-                  X
-                </button>
-              </div>
-              <div className="flex flex-col gap-3">
-                <Image
-                  src={activeProject.popupImg}
-                  alt={activeProject.title}
-                  width={1000}
-                  height={1000}
-                  className="relative w-auto h-auto rounded-md"
-                />
-                <h2 className="text-4xl font-bold font-mono border-b-2 w-max border-spacing-2 border-dashed border-emerald-500">
-                  {activeProject.title}
-                </h2>
-                <p>
-                  {activeProject.popupDescription.map((desc, index) => (
-                    <span key={index}>{desc}</span>
-                  ))}
-                </p>{" "}
-                {/* Use popupDescription */}
-                <div className="flex flex-row gap-4 ">
-                  <a
-                    href={activeProject.liveLink}
-                    target="blank"
-                    className="p-2 my-4 rounded-md bg-black border border-emerald-700 hover:border-emerald-500 hover:translate text-white text-sm w-max flex justify-center items-center"
+          {/* Popup Modal */}
+          {isOpen && activeProject && (
+            <div
+              id="small-dialog"
+              className="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-gray-900 bg-opacity-50 overflow-hidden px-1 md:px-10"
+            >
+              <div className="relative bg-gray-900 text-slate-200 p-4 md:p-10 rounded-lg w-[100%] md:w-[70%] max-h-[100%] md:max-h-[90%] overflow-y-scroll scrollbar-none">
+                <div className="flex justify-end items-end top-4 pt-16 md:pt-8">
+                  <button
+                    onClick={closePopup}
+                    className="fixed z-30 bg-red-600 text-white px-4 py-2 mb-10 rounded-lg"
                   >
-                    Live Preiview
-                  </a>
-                  <a
-                    href={activeProject.sourceLink}
-                    target="blank"
-                    className="p-2 my-4 rounded-md bg-black border border-emerald-700 hover:border-emerald-500 text-white text-sm w-max flex justify-center items-center"
-                  >
-                    Github code
-                  </a>
+                    X
+                  </button>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <Image
+                    src={activeProject.popupImg}
+                    alt={activeProject.title}
+                    width={1000}
+                    height={1000}
+                    className="relative w-auto h-auto rounded-md"
+                  />
+                  <h2 className="text-4xl font-bold font-mono border-b-2 w-max border-spacing-2 border-dashed border-emerald-500">
+                    {activeProject.title}
+                  </h2>
+                  <p>
+                    {activeProject.popupDescription.map((desc, index) => (
+                      <span key={index}>{desc}</span>
+                    ))}
+                  </p>{" "}
+                  {/* Use popupDescription */}
+                  <div className="flex flex-row gap-4 ">
+                    <a
+                      href={activeProject.liveLink}
+                      target="blank"
+                      className="p-2 my-4 rounded-md bg-black border border-emerald-700 hover:border-emerald-500 hover:translate text-white text-sm w-max flex justify-center items-center"
+                    >
+                      Live Preiview
+                    </a>
+                    <a
+                      href={activeProject.sourceLink}
+                      target="blank"
+                      className="p-2 my-4 rounded-md bg-black border border-emerald-700 hover:border-emerald-500 text-white text-sm w-max flex justify-center items-center"
+                    >
+                      Github code
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
 
-      <div className="flex justify-center items-center">
-        <a
-          className="rounded-full p-3 w-max hover:border-emerald-00 hover:bg-emerald-500 bg-black  flex flex-row gap-1 justify-center items-center border text-white border-emerald-500"
-          href="/project"
-        >
-          More Projects{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            className="bi bi-arrow-right-short"
-            viewBox="0 0 16 16"
+        <div className="flex justify-center items-center">
+          <a
+            className="rounded-full p-3 w-max hover:border-emerald-00 hover:bg-emerald-500 bg-black  flex flex-row gap-1 justify-center items-center border text-white border-emerald-500"
+            href="/project"
           >
-            <path
-              fillRule="evenodd"
-              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
-            />
-          </svg>
-        </a>
-      </div>
-    </main>
+            More Projects{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              className="bi bi-arrow-right-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+              />
+            </svg>
+          </a>
+        </div>
+      </main>
+    </>
   );
 }

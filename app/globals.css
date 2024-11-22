@@ -83,7 +83,7 @@
   }
 
   .section_title {
-    @apply text-[1.75rem] flex flex-row justify-center items-center pl-4 font-semibold gap-1 text-white;
+    @apply text-[1.75rem] flex flex-row justify-center items-center hover:underline gap-2 pl-4 font-semibold  text-emerald-500;
   }
 
   .title {
