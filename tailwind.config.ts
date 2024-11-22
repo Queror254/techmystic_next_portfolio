@@ -24,7 +24,7 @@ const config = {
     extend: {
       screens: {
         // Customizing or extending existing breakpoints
-        'xs': '375px',
+        'xs': '360px',
         'sm': '400px',   // Small screens (default)
         'md': '768px',   // Medium screens (default)
         'lg': '1024px',  // Large screens (default)
