@@ -204,7 +204,7 @@ export default function Projects() {
                     <div className="flex justify-start items-start w-full text-white text-xl font-semibold">
                       <span>{project.title}</span>
                     </div>
-                    <CardItem translateZ="70" className="w-full mt-4 mb-4">
+                    <CardItem translateZ="20" className="w-full mt-4 mb-4">
                       <Image
                         src={project.imageUrl}
                         height="700"
@@ -216,7 +216,7 @@ export default function Projects() {
                     <div className="text-white/70">
                       <span>{project.description}</span>
                     </div>
-                    <div className="flex justify-between gap-48 items-center mt-5">
+                    <div className="flex justify-between xs:gap-36 sm:gap-48 md:gap-48 lg:gap-48 items-center mt-5">
                       <CardItem
                         translateZ={20}
                         onClick={() => openPopup(project)}
