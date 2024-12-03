@@ -155,6 +155,39 @@ export default function Projects() {
         </p>,
       ],
     },
+    {
+      id: 5,
+      category: "extensions",
+      title: "TaskBuddy",
+      duration: "2 weeks",
+      description: "Task management browser extension for chrome",
+      imageUrl: "/images/backend2.jpg",
+      technologies: ["React", "OpenWeather API", "JavaScript", "CSS"],
+      liveLink: "https://queror254.github.io/",
+      sourceLink: "https://github.com/Queror254/",
+      popupImg: "/images/portfolio/hotspotmenu.png",
+      popupDescription: [
+        <p key="hotspot-1" className="mt-8 mb-2">
+          <b className="text-xl">
+            TaskBuddy: Simple task management browser extension
+          </b>
+        </p>,
+        <p key="hotspot-2">
+          This fast-food restaurant website was created to provide a modern and
+          fast-loading interface, allowing users to easily navigate the menu,
+          check the location, and place orders.
+        </p>,
+        <br key="hotspot-br-2" />,
+        <p key="hotspot-3" className="mb-2">
+          <b className="text-xl">Fast, Reliable & Responsive</b>
+        </p>,
+        <p key="hotspot-4">
+          Built with simple HTML, CSS, and JavaScript, the website prioritizes
+          user experience, ensuring quick load times and a responsive design
+          across devices.
+        </p>,
+      ],
+    },
   ];
 
   //function to handle category selection
@@ -202,7 +235,7 @@ export default function Projects() {
 
         <div className="relative flex justify-center items-center pt-5 pb-5 px-4 w-full">
           <div className="categories_container">
-            {["all", "web", "app", "cards", "api", "browser extensions"].map(
+            {["all", "web", "app", "cards", "api", "extensions"].map(
               (category) => (
                 <Link
                   key={category}
@@ -225,8 +258,14 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col items-center bg-black border-black/[0.1] w-[320px] h-[290px] rounded-xl border border-emerald-900 hover:border-emerald-500 hover:shadow-lg transition-shadow"
+              className="flex flex-col items-center bg-black border-black/[0.1] w-[320px] h-[310px] rounded-xl border border-emerald-900 hover:border-emerald-500 hover:shadow-lg transition-shadow"
             >
+              <div
+                onClick={() => openPopup(project)}
+                className="text-xl font-semibold w-full px-4 mt-2 flex justify-start items-start float-start hover:cursor-pointer hover:underline"
+              >
+                <span className="text-start">{project.title}</span>
+              </div>
               {/* Image Section */}
               <div className="w-full mt-4 mb-4 p-4">
                 <Image
@@ -239,7 +278,7 @@ export default function Projects() {
               </div>
 
               {/* Buttons Section */}
-              <div className="flex justify-between gap-4 items-center mt-5 rounded-b-md w-full hover:bg-gray-900 p-2">
+              <div className="flex justify-between gap-4 items-center rounded-b-md w-full hover:bg-gray-900 p-2">
                 <div
                   onClick={() => openPopup(project)}
                   className="flex justify-center items-center bg-black gap-2 xs:px-0 px-4 py-1 hover:shadow-lg hover:shadow-emerald-500 rounded-md font-bold text-white hover:cursor-pointer"
