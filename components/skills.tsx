@@ -10,7 +10,7 @@ const Skills = () => {
       <div className="w-full p-10 bg-gray-950">
         <RandomQuoute />
       </div>
-      <div className="mt-2 py-2 px-2 bg-gray-900" id="skills">
+      <div className="mt-2 py-8 px-2 bg-gray-900" id="skills">
         <div className="relative flex flex-col h-full w-full">
           <h2 className="section_title">
             <span>{"<"}</span>
@@ -19,8 +19,11 @@ const Skills = () => {
           </h2>
 
           <section className="skills_&_services flex justify-center items-center">
-            <div className="flex flex-col md:flex-wrap lg:flex-row items-center justify-center gap-4 xs:px-4 sm:px-4 h-full w-fit text-white">
-              <div className="flex flex-col justify-center h-[20rem] md:w-[20rem] lg:w-[22rem] px-3 border border-emerald-500 bg-gray-800">
+            <div className="flex flex-col md:flex-wrap md:flex-row lg:flex-row items-center justify-center gap-4 xs:px-4 sm:px-4 h-full w-fit text-white">
+              <div
+                id="skill_card"
+                className="flex flex-col justify-center h-[20rem] xs:w-fit sm:w-fit  md:w-[20rem] lg:w-[22rem] px-3 border border-emerald-500 bg-gray-800"
+              >
                 <h3 className="skill_title text-2xl font-semibold font-mono text-center">
                   Frontend Development <span>{"()"}</span>
                 </h3>
@@ -28,23 +31,31 @@ const Skills = () => {
 
                 <p className="font-mono">
                   Passionate about UI/UX. Over 5 years of development experience
-                  in HTML, CSS, JS, React and NextJS frameworks.
+                  in <span>HTML</span> <span>CSS</span> <span>JS</span>{" "}
+                  <span>React</span> {""} & <span>Next.js</span>frameworks.
                 </p>
                 <span className="text-gray-400 py-4">{"}"}</span>
               </div>
-              <div className="flex flex-col justify-center h-[20rem] md:w-[20rem] lg:w-[22rem] px-3 border border-emerald-500 bg-gray-800">
+              <div
+                id="skill_card"
+                className="flex flex-col justify-center h-[20rem] md:w-[20rem] lg:w-[22rem] px-3 border border-emerald-500 bg-gray-800"
+              >
                 <h3 className="skill_title text-2xl font-semibold font-mono text-center">
                   Backend Development <span>{"()"}</span>
                 </h3>
                 <span className="text-gray-400 py-4">{"{"}</span>
 
                 <p className="font-mono">
-                  Experienced in both functional and OOP: Dart, Python, Java,
-                  JavaScript, TypeScript.
+                  Experienced in both functional and OOP: {""}
+                  <span>Python</span> <span>Java</span> <span>JavaScript</span>{" "}
+                  <span>TypeScript</span>.
                 </p>
                 <span className="text-gray-400 py-4">{"}"}</span>
               </div>
-              <div className="flex flex-col justify-center h-[20rem] md:w-[20rem] lg:w-[22rem] px-3 border border-emerald-500 bg-gray-800">
+              <div
+                id="skill_card"
+                className="flex flex-col justify-center h-[20rem] md:w-[20rem] lg:w-[22rem] px-3 border border-emerald-500 bg-gray-800"
+              >
                 <h3 className="skill_title text-2xl font-semibold font-mono text-center">
                   App Development <span>{"()"}</span>
                 </h3>
@@ -52,7 +63,7 @@ const Skills = () => {
 
                 <p className="font-mono">
                   Skilled in developing hybrid mobile apps and cross-platform
-                  solutions using the React Native framework.
+                  solutions using the <span>React Native</span> framework.
                 </p>
                 <span className="text-gray-400 py-4">{"}"}</span>
               </div>

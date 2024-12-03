@@ -32,7 +32,7 @@ const QuoteFetcher = () => {
   return (
     <div className="text-white rounded-lg shadow-lg">
       <div className="text-center">
-        <span className="list-none text-3xl font-mono">
+        <span className="xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl font-mono">
           {programmingQuotes.length > 0 ? (
             programmingQuotes.map((quote, index) => (
               <span key={index}>"{quote}"</span>

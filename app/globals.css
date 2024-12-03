@@ -93,6 +93,41 @@
   .tech_stack {
     @apply p-1 rounded-md bg-gray-700 text-white text-sm;
   }
+
+  #skill_card > p > span {
+    display: inline-block;
+    padding: 0.01rem;
+    border-radius: 10%;
+    position: relative;
+    @apply animate-bounce bg-gray-700 hover-underline-animation;
+  }
+
+  .hover-underline-animation {
+    display: inline-block;
+    background-color: #047857;
+    padding: 2px;
+    border-radius: 10%;
+    position: relative;
+    @apply animate-ping;
+  }
+
+  .hover-underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #10b981;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 }
 
 @layer base {
@@ -101,5 +136,40 @@
   }
   .categories_nav {
     @apply border text-white border-emerald-700 px-2 lg:px-4 rounded-md hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500;
+  }
+}
+
+@layer base {
+  .nav_dock {
+    outline-width: 0.5px;
+    outline-offset: 0;
+    outline-color: #047857;
+    outline-style: solid;
+    animation: animateOutline 4s ease infinite;
+  }
+
+  @keyframes animateOutline {
+    0% {
+      outline-width: 1px;
+      outline-offset: 0;
+      outline-color: rgba(0, 130, 206, 0);
+    }
+
+    10% {
+      outline-color: #047857;
+    }
+
+    /* The animation finishes at 50% */
+    50% {
+      outline-width: 7px;
+      outline-offset: 4px;
+      outline-color: rgba(0, 130, 206, 0);
+    }
+
+    100% {
+      outline-width: 7px;
+      outline-offset: 4px;
+      outline-color: rgba(102, 102, 102, 0);
+    }
   }
 }

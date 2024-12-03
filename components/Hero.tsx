@@ -153,12 +153,14 @@ const Hero = () => {
                 className="bg-inherit rounded-full size-[150px] md:sixe-[200px] lg:size-[220px] object-contain"
                 src={heroImg}
               />
-              <h1 className="text-5xl text-center md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono">
+              <h1 className="text-5xl text-center lg:text-start md:text-5xl lg:text-6xl font-mono md:font-semibold  md:font-mono">
                 Hi there, I'm Victor
               </h1>
-              <h4 className="text-xl font-mono text-emerald-600">{aka}</h4>
-              <div className="mb-4 flex flex-col gap-4">
-                <h3 className="text-2xl md:text-4xl lg:text-4xl dark:font-thin">
+              <h4 className="text-xl w-full flex justify-center lg:justify-start lg:items-start font-mono text-emerald-600">
+                {aka}
+              </h4>
+              <div className="mb-4 flex w-full justify-center lg:justify-start lg:items-start gap-4">
+                <h3 className="text-2xl md:text-4xl lg:text-4xl lg:text-start dark:font-thin">
                   Fullstack Developer
                 </h3>
               </div>

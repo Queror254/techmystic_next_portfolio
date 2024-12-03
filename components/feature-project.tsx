@@ -216,7 +216,7 @@ export default function Projects() {
                     <div className="text-white/70">
                       <span>{project.description}</span>
                     </div>
-                    <div className="flex justify-between xs:gap-36 sm:gap-48 md:gap-48 lg:gap-48 items-center mt-5">
+                    <div className="flex justify-between xs:gap-28 sm:gap-48 md:gap-48 lg:gap-48 items-center mt-5">
                       <CardItem
                         translateZ={20}
                         onClick={() => openPopup(project)}

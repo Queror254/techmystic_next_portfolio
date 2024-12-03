@@ -1,5 +1,5 @@
 //@ts-ignore
-'use client'
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,8 +16,8 @@ import {
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "./mode-toggle";
-import Home from '../app/page';
-import { div } from 'framer-motion/client';
+import Home from "../app/page";
+import { div } from "framer-motion/client";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
@@ -98,122 +98,149 @@ const DATA = {
 export function NavBar() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-30 mx-auto mb-10 flex origin-bottom h-full px-4 max-h-14">
-      <div className="fixed bottom-0 inset-x-0 h-16 w-max"></div>      <TooltipProvider>
-        <Dock direction="middle" className="w-full  bg-gray-800 to-transparent backdrop-blur-lg text-sm text-slate-200">
+      <div className="fixed bottom-0 inset-x-0 h-16 w-max"></div>{" "}
+      <TooltipProvider>
+        <Dock
+          direction="middle"
+          className="nav_dock w-full bg-gray-800 to-transparent backdrop-blur-lg text-sm text-slate-200"
+        >
           <DockIcon>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href="/"
-                    aria-label="Home"
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
-                    )}
-                  >
-                    <Image src="/nav-icons/home.png" alt="icon" width={20} height={20} />
-                    {/*<span><HomeIcon className="size-4" /></span>*/}
-                    <span>Home</span>
-                    
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Top</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="/"
+                  aria-label="Home"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "size-10 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col"
+                  )}
+                >
+                  <Image
+                    src="/nav-icons/home.png"
+                    alt="icon"
+                    width={20}
+                    height={20}
+                  />
+                  {/*<span><HomeIcon className="size-4" /></span>*/}
+                  <span>Home</span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Top</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
 
           <Separator orientation="vertical" className="h-full" />
 
           <DockIcon>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href="/#skills"
-                    aria-label="Skills"
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
-                    )}
-                  >
-                    <Image src="/nav-icons/skills.png" alt="icon" width={20} height={20} />
-                    Skills
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>checkout my skills</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-
-            <Separator orientation="vertical" className="h-full" />
-
-          <DockIcon>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href="/project"
-                    aria-label="Projects"
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
-                    )}
-                  >
-                    <Image src="/nav-icons/project1.png" alt="icon" width={20} height={20} />
-                    Projects
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Take a look at my projects</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="/#skills"
+                  aria-label="Skills"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col"
+                  )}
+                >
+                  <Image
+                    src="/nav-icons/skills.png"
+                    alt="icon"
+                    width={20}
+                    height={20}
+                  />
+                  Skills
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>checkout my skills</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
 
           <Separator orientation="vertical" className="h-full" />
 
-            <DockIcon>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href="/"
-                    aria-label="Blog"
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
-                    )}
-                  >
-                    <Image src="/nav-icons/blog.png" alt="icon" width={20} height={20} />
-                    Blog
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>techmystic</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
+          <DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="/project"
+                  aria-label="Projects"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col"
+                  )}
+                >
+                  <Image
+                    src="/nav-icons/project1.png"
+                    alt="icon"
+                    width={20}
+                    height={20}
+                  />
+                  Projects
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Take a look at my projects</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
 
-            <DockIcon>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href="/"
-                    aria-label="Contact"
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col",
-                    )}
-                  >
-                    <Image src="/nav-icons/contact.png" alt="icon" width={20} height={20} />
-                    Contact
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>reach out to me</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          
+          <Separator orientation="vertical" className="h-full" />
 
+          <DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="https://dev.to/techmystic"
+                  aria-label="Blog"
+                  target="blank"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col"
+                  )}
+                >
+                  <Image
+                    src="/nav-icons/blog.png"
+                    alt="icon"
+                    width={20}
+                    height={20}
+                  />
+                  Blog
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>techmystic</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+
+          <DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="#contact"
+                  aria-label="Contact"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "size-12 rounded-md  hover:text-emerald-200 hover:bg-inherit flex flex-col"
+                  )}
+                >
+                  <Image
+                    src="/nav-icons/contact.png"
+                    alt="icon"
+                    width={20}
+                    height={20}
+                  />
+                  Contact
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>reach out to me</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
         </Dock>
       </TooltipProvider>
     </div>

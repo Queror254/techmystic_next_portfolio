@@ -15,7 +15,9 @@ const RandomQuoute = () => {
   return (
     <div className="text-white rounded-lg shadow-lg">
       <div className="text-center">
-        <p className="text-3xl font-mono">"{randomQuote || "Loading..."}"</p>
+        <p className="xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl font-mono">
+          "{randomQuote || "Loading..."}"
+        </p>
       </div>
     </div>
   );
